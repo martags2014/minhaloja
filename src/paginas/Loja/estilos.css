@@ -1,0 +1,79 @@
+/* Container principal da Loja */
+.loja-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.loja-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.loja-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.loja-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* 
+  GRADE RESPONSIVA 
+  - Celular: 1 coluna por padrão
+  - Tablet e Desktop: Se adapta automaticamente variando de 2 até 4 colunas 
+    conforme o espaço disponível na tela.
+*/
+.produtos-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 coluna no celular */
+  gap: 24px;
+  justify-items: center; /* Centraliza os cards caso sobrem espaços */
+}
+
+/* Tablet (a partir de 640px): Garante pelo menos 2 colunas */
+@media (min-width: 640px) {
+  .produtos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop menor / médio (a partir de 1024px): 3 colunas */
+@media (min-width: 1024px) {
+  .produtos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Desktop grande (a partir de 1280px): Expande para até 4 colunas */
+@media (min-width: 1280px) {
+  .produtos-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Estados de carregamento e erro */
+.loja-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.125rem;
+  color: #4b5563;
+}
+
+.loja-status.erro {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.nenhum-produto {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  padding: 40px 0;
+}

@@ -1,0 +1,141 @@
+.produto-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.produto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.produto-imagem-container {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  background-color: #f9fafb;
+  overflow: hidden;
+}
+
+.produto-imagem {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.produto-card:hover .produto-imagem {
+  transform: scale(1.05);
+}
+
+.produto-categoria-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.produto-esgotado-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.produto-conteudo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.produto-nome {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.produto-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.produto-preco {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.produto-precos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.produto-preco-original {
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-decoration: line-through;
+}
+
+.produto-botao {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.produto-botao:hover {
+  background-color: #4338ca;
+}
+
+.produto-botao:active {
+  transform: scale(0.95);
+}
+
+.produto-botao:hover:not(:disabled) {
+  background-color: #4338ca;
+}
+
+/* Estilo aplicado quando o estoque for zero */
+.produto-botao.indisponivel,
+.produto-botao:disabled {
+  background-color: #9ca3af; /* Cor cinza */
+  color: #f3f4f6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
