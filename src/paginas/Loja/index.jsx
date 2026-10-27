@@ -8,7 +8,7 @@ export default function Loja({ onComprar, itensCarrinho }) {
   const [erro, setErro] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/products')
+    fetch('http://10.0.0.29:3000/products')
       .then((resposta) => {
         if (!resposta.ok) {
           throw new Error('Erro ao carregar os produtos do servidor.');
